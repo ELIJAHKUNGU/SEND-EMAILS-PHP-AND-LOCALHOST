@@ -1,3 +1,15 @@
+<?php
+ini_set("display_errors", "1");
+error_reporting(E_ALL);
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +23,11 @@
 <hr>
 	<?php 
 		if(isset($_POST['sendmail'])) {
-			// require 'PHPMailer/PHPMailerAutoload.php';
-			require 'PHPMailer/PHPMailerAutoload.php';
+
 			require 'credential.php';
+
+
+//
 
 			$mail = new PHPMailer;
 
